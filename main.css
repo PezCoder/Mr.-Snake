@@ -1,0 +1,81 @@
+	* {
+	    margin: 0;
+	    padding: 0;
+	}
+	
+	html,
+	body {
+	    font-family: 'Roboto', sans-serif;
+	    position: relative;
+	    width: 100%;
+	    background-color: #e8eaf6;
+	}
+	
+	canvas {
+	    display: block;
+	    margin: 0 auto;
+	    background-color: #e8eaf6;
+	}
+	
+	p {
+	    font-size: 25px;
+	    line-height: 30px;
+	    height: 30px;
+	    margin: 0;
+	    padding: 17px;
+	    text-align: left;
+	    vertical-align: middle;
+	    color: #0a487c;
+	    background-color: #7daed7;
+	}
+	
+	p span {
+	    font-size: 16px;
+	    display: inline-block;
+	    margin-left: 10px;
+	    vertical-align: middle;
+	}
+	/* HEART SHAPE*/
+	
+	.heart-shape {
+	    position: relative;
+	    display: inline-block;
+	    width: 15px;
+	    height: 15px;
+	    margin-right: 10px;
+	    -webkit-animation: pulse 1.5s infinite alternate;
+	    background-color: #f62459;
+	}
+	
+	.heart-shape:before,
+	.heart-shape:after {
+	    position: absolute;
+	    width: 15px;
+	    height: 15px;
+	    content: '';
+	    -webkit-border-radius: 50%;
+	    -moz-border-radius: 50%;
+	    border-radius: 50%;
+	    background-color: #f62459;
+	    -o-border-radius: 50%;
+	}
+	
+	.heart-shape:before {
+	    bottom: 0;
+	    left: -8px;
+	}
+	
+	.heart-shape:after {
+	    top: -8px;
+	    right: 0;
+	}
+	/* heart beat */
+	
+	@-webkit-keyframes pulse {
+	    0% {
+	        -webkit-transform: scale(1, 1) rotate(45deg);
+	    }
+	    100% {
+	        -webkit-transform: scale(1.2, 1.2) rotate(45deg);
+	    }
+	}
