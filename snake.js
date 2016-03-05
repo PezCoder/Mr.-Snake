@@ -36,7 +36,8 @@ var canvas = document.getElementById('canvas'),
 	score = 0,
 	running = false,
 	previousPress = "default",
-	collided = false;
+	collided = false,
+	motionSpeedTimer = 150;
 
 heart.src="clippedHeart.png";
 mouse.src="mouse.png";
@@ -174,7 +175,7 @@ function draw(){
 
 	checkFoodCollision();
 	//requestAnimationFrame(draw);
-	setTimeout(draw,150);
+	setTimeout(draw, motionSpeedTimer);
 }
 draw();
 
@@ -202,6 +203,13 @@ function checkFoodCollision(){
 			foodX = getRandom(width-foodWidth),
 			foodY = getRandom(height-foodHeight);
 			score+=1;
+
+			// increment speed after every 5 increment score
+			if(score >= 5 && score % 5 === 0){
+				motionSpeedTimer -=5;
+				console.log('decrementing',motionSpeedTimer);
+			}
+
 			collided = true;
 		}
 	}
