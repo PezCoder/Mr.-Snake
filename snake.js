@@ -291,6 +291,7 @@
   function gameOver(){
     alert("Game Over :(");
     lives = 3;
+    score = 0;
   }
   //resets the positions of snake and stops it
   function stopMotion(pos){
