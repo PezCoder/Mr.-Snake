@@ -10,7 +10,7 @@ Use arrow keys ( &uarr; &rarr; &darr; &larr; ) to control Mr.Snake.
 ## Demo & Gameplay
 ![Demo](./snake_demo.gif)
 
-[Mr. Snake in action](http://pezcoder.github.io/Mr.Snake/snake.html)
+[Play Mr.Snake here](http://pezcoder.github.io/Mr.Snake/snake.html)
 
-## Bugs/Feature requests ?
+## 🐞 Bugs / 🌈 Feature requests ?
 Take a look at [Contributing guide](./contributing.md) & feel free to raise a PR
