@@ -149,6 +149,9 @@
   function draw(){
     ctx.clearRect(0,0,width,height);
     //reset directions on each block acc to next one
+    if(lives === 0){
+      gameOver();
+    }
     for(var i=0;i<tails.length;i++){
       tails[i].setDirection(tails[i-1]);
     }
@@ -284,14 +287,22 @@
       stopMotion({horizontal:false,length: -dy*4});
       y-=dy*5;
     }
-    if(lives === 0){
-      gameOver();
-    }
+    
   }
   function gameOver(){
     alert("Game Over :(");
+    restartGame();
+  }
+  function restartGame(){
     lives = 3;
     score = 0;
+    x = 100;
+    y = 100;
+    tails = [];
+    createSnake();
+    // ...etc
+    // reset all game data you need here
+
   }
   //resets the positions of snake and stops it
   function stopMotion(pos){
