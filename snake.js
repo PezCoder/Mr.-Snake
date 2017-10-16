@@ -37,7 +37,8 @@
     running = false,
     previousPress = "default",
     collided = false,
-    motionSpeedTimer = 150;
+    motionSpeedTimer = 150,
+    isGameOver = false;
 
   heart.src="clippedHeart.png";
   mouse.src="mouse.png";
@@ -147,11 +148,10 @@
   //UPDATES & PAINT EVERYTHIN ( MAIN GAME LOOP )
   function draw(){
     ctx.clearRect(0,0,width,height);
-    if(lives===0){
-      alert("Game Over !! :( ");
-      document.location.reload();
-    }
     //reset directions on each block acc to next one
+    if(lives === 0){
+      gameOver();
+    }
     for(var i=0;i<tails.length;i++){
       tails[i].setDirection(tails[i-1]);
     }
@@ -287,9 +287,23 @@
       stopMotion({horizontal:false,length: -dy*4});
       y-=dy*5;
     }
+    
+  }
+  function gameOver(){
+    alert("Game Over :(");
+    restartGame();
+  }
+  function restartGame(){
+    lives = 3;
+    score = 0;
+    x = 100;
+    y = 100;
+    tails = [];
+    createSnake();
+    // ...etc
+    // reset all game data you need here
 
   }
-
   //resets the positions of snake and stops it
   function stopMotion(pos){
     running = false;
