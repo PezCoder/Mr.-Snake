@@ -148,8 +148,12 @@
   function draw(){
     ctx.clearRect(0,0,width,height);
     if(lives===0){
-      alert("Game Over !! :( ");
-      document.location.reload();
+      if(alert("Game Over !! :( ")){
+
+      }else{
+        window.location.reload();  
+      }
+      
     }
     //reset directions on each block acc to next one
     for(var i=0;i<tails.length;i++){
