@@ -37,7 +37,8 @@
     running = false,
     previousPress = "default",
     collided = false,
-    motionSpeedTimer = 150;
+    motionSpeedTimer = 150,
+    isGameOver = false;
 
   heart.src="clippedHeart.png";
   mouse.src="mouse.png";
@@ -147,13 +148,9 @@
   //UPDATES & PAINT EVERYTHIN ( MAIN GAME LOOP )
   function draw(){
     ctx.clearRect(0,0,width,height);
-    if(lives===0){
-      if(alert("Game Over !! :( ")){
-
-      }else{
-        window.location.reload();  
-      }
-      
+    if(lives===0 && !isGameOver){
+      alert("Game Over !! :( ");
+      gameOver();
     }
     //reset directions on each block acc to next one
     for(var i=0;i<tails.length;i++){
@@ -312,6 +309,11 @@
         tails[i].y += pos.length;
       }
     }
+  }
+
+  function gameOver(){
+    isGameOver = true;
+    window.location.reload();
   }
 
 }());
