@@ -149,7 +149,6 @@
   function draw(){
     ctx.clearRect(0,0,width,height);
     if(lives===0 && !isGameOver){
-      alert("Game Over !! :( ");
       gameOver();
     }
     //reset directions on each block acc to next one
@@ -312,6 +311,7 @@
   }
 
   function gameOver(){
+    alert("Game Over !! :( ");
     isGameOver = true;
     window.location.reload();
   }
